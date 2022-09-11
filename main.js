@@ -1,0 +1,1 @@
+alert('Działa e huj');

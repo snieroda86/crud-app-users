@@ -1,1 +1,0 @@
-alert('Działa e huj');

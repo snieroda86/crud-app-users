@@ -15,4 +15,12 @@ class Database extends Config{
 
 		return true;
 	}
+
+	public function index(){
+		$sql = "SELECT * FROM users";
+		$stmt = $this->conn->query($sql);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+		return $result;
+	}
 }

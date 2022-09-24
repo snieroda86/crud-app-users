@@ -18,3 +18,37 @@ if(isset($_POST['add'])){
 	}
 
 }
+
+
+// Handle fetch all users from db
+if(isset($_GET['read'])){
+	$users = $db->index();
+	$output ='';
+	if($users){
+		foreach ($users as $key => $user) {
+			$output.='
+				<tr>
+			      <td>'.$key.'</td>
+			      <td>'.$user['first_name'].'</td>
+			      <td>'.$user['last_name'].'</td>
+			      <td>'.$user['email'].'l</td>
+			      <td>'.$user['phone'].'</td>
+			      <td>
+			      	<div class="d-flex">
+			      		<a href="#" id="user-id-'.$user['id'].'" class="btn btn-secondary me-3">Edit</a>
+			      		<a href="#" id="user-id-'.$user['id'].'" class="btn btn-danger">Delete</a>
+
+			      	</div>
+			      </td>
+
+			    </tr>
+			';
+		}
+
+		echo $output;
+	}else{ ?>
+		<tr>
+			<td colspan="6">No users found</td>
+		</tr>
+	<?php }
+}

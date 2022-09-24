@@ -1,5 +1,6 @@
 const addUserForm = document.getElementById('add-user-form');
 const addUserModal = new bootstrap.Modal(document.getElementById('addUserModal'));
+const usersTable = document.querySelector('#users-list-tbl tbody');
 
 // New user ajax request
 addUserForm.addEventListener("submit" , async (e)=>{
@@ -24,5 +25,19 @@ addUserForm.addEventListener("submit" , async (e)=>{
 		addUserForm.reset();
 		addUserForm.classList.remove("was-validated");
 		addUserModal.hide();
+		fetchAllUsers();
 	}
 });
+
+// Fetch all users via AJAX
+const fetchAllUsers = async function(){
+	const data = await fetch("action.php?read=1" , {
+		method: "get"
+	});
+
+	const response = await data.text();
+	usersTable.innerHTML=response;
+
+}
+
+fetchAllUsers();

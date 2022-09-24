@@ -95,7 +95,7 @@
     	<!-- Users from database -->
     	<div class="row">
     		<div class="col-12">
-    			<table class="table table-dark">
+    			<table class="table table-dark" id="users-list-tbl">
 				  <thead>
 				    <tr>
 				    	<th>ID</th>
@@ -108,22 +108,7 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr class="table-active">
-				      <td>1</td>
-				      <td>Jan</td>
-				      <td>Kowalski</td>
-				      <td>kowal@wp.pl</td>
-				      <td>456456456</td>
-				      <td>
-				      	<div class="d-flex">
-				      		<a href="#" class="btn btn-secondary me-3">Edit</a>
-				      		<a href="#" class="btn btn-danger">Delete</a>
-
-				      	</div>
-				      </td>
-
-				    </tr>
-				
+				   
 				  </tbody>
 				</table>
     		</div>

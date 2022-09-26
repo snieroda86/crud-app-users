@@ -26,6 +26,60 @@
 	       	 	<div class="row mb-3 gx-2">
 	       	 		<!-- First name -->
 	       	 		<div class="col-6">
+	       	 			<input type="text" name="fname" class="form-control form-control-lg" placeholder="First name" required>
+	       	 			<div class="invalid-feedback">
+	       	 				First name is required
+	       	 			</div>
+	       	 		</div>
+	       	 		<!-- Last name -->
+	       	 		<div class="col-6">
+	       	 			<input type="text"  name="lname" class="form-control form-control-lg" placeholder="Last name" required>
+	       	 			<div class="invalid-feedback">
+	       	 			 Last name is required
+	       	 			</div>
+	       	 		</div>
+	       	 	</div>
+	       	 	<!-- Email -->
+	       	 	<div class="mb-3">
+	       	 		<input type="email"  name="email" class="form-control form-control-lg" placeholder="Enter email" required>
+       	 			<div class="invalid-feedback">
+       	 			 Email is required
+       	 			</div>
+	       	 	</div>
+	       	 	<!-- Phone -->
+	       	 	<div class="mb-3">
+	       	 		<input type="tel" name="phone" class="form-control form-control-lg" placeholder="Phone number" required>
+       	 			<div class="invalid-feedback">
+       	 			 Phone is required
+       	 			</div>
+	       	 	</div>
+	       	 	<!-- Submit button -->
+	       	 	<div class="mb-3">
+	       	 		<input type="submit" id="add-user-btn" value="Add user" class="btn btn-primary btn-lg">
+	       	 	</div>
+	       	 </div>
+	       </form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+  	<!-- Add new user modal end -->
+
+  	<!-- Update user modal start -->
+  	<div class="modal fade" id="updateUserModal" tabindex="-1" aria-labelledby="updateUserModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="updateModalLabel">Update user</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	       <form id="update-user-form" class="p-2" novalidate>
+	       	<input type="hidden" name="user_id" id="user_id" value="">
+	       	 <div class="mb-3">
+	       	 	<div class="row mb-3 gx-2">
+	       	 		<!-- First name -->
+	       	 		<div class="col-6">
 	       	 			<input type="text" id="fname" name="fname" class="form-control form-control-lg" placeholder="First name" required>
 	       	 			<div class="invalid-feedback">
 	       	 				First name is required
@@ -55,19 +109,15 @@
 	       	 	</div>
 	       	 	<!-- Submit button -->
 	       	 	<div class="mb-3">
-	       	 		<input type="submit" id="add-user-btn" value="Add user" class="btn btn-primary btn-lg">
+	       	 		<input type="submit" id="update-user-btn" value="Update user" class="btn btn-success btn-lg">
 	       	 	</div>
 	       	 </div>
 	       </form>
 	      </div>
-	     <!--  <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
-	      </div> -->
 	    </div>
 	  </div>
 	</div>
-  	<!-- Add new user modal end -->
+  	<!-- Update user modal end -->
 
     
     <div class="container">
@@ -96,20 +146,20 @@
     	<div class="row">
     		<div class="col-12">
     			<table class="table table-dark" id="users-list-tbl">
-				  <thead>
-				    <tr>
-				    	<th>ID</th>
-				    	<th>First Name</th>
-				    	<th>Last Name</th>
-				    	<th>Email</th>
-				    	<th>Phone</th>
-				    	<th>Action</th>
+					  <thead>
+					    <tr>
+					    	<th>ID</th>
+					    	<th>First Name</th>
+					    	<th>Last Name</th>
+					    	<th>Email</th>
+					    	<th>Phone</th>
+					    	<th>Action</th>
 
-				    </tr>
-				  </thead>
-				  <tbody>
-				   
-				  </tbody>
+					    </tr>
+					  </thead>
+					  <tbody>
+					   
+					  </tbody>
 				</table>
     		</div>
     	</div>

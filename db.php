@@ -23,4 +23,28 @@ class Database extends Config{
 		$result = $stmt->fetchAll();
 		return $result;
 	}
+
+	// Get user
+	public function getUser($id){
+		$sql = "SELECT * FROM users WHERE id=:id";
+		$stmt = $this->conn->prepare($sql);
+		$stmt->execute(['id'=>$id]);
+		$result = $stmt->fetch();
+		return $result;
+	}
+
+	// Update user
+	public function updateUser($id ,$fname , $lname , $email , $phone){
+		$sql = "UPDATE users SET first_name=:fname, last_name=:lname, email=:email, phone=:phone WHERE id=:id";
+		$stmt = $this->conn->prepare($sql);
+		$stmt->execute([
+			'fname' => $fname ,
+			'lname' => $lname ,
+			'email' => $email ,
+			'phone' => $phone ,
+			'id'=>$id 
+
+		]);
+		return true;
+	}
 }
